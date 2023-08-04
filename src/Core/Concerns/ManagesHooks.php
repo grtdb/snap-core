@@ -117,7 +117,7 @@ trait ManagesHooks
      * @param  integer         $accepted_args The amount of arguments passed into the hook.
      * @return integer
      */
-    final private function getArgumentCount($callback, $accepted_args = 1)
+    private function getArgumentCount($callback, $accepted_args = 1)
     {
         try {
             if (\is_string($callback) && \is_callable([$this, $callback])) {
