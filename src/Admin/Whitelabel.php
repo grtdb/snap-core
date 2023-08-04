@@ -73,7 +73,7 @@ class Whitelabel extends Hookable
     public function removeVersionText($version): string
     {
         if (true === Config::get('admin.show_version')) {
-            return $version;
+            return $version || '';
         }
 
         return '';
