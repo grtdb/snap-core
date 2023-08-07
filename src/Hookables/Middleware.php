@@ -52,7 +52,7 @@ class Middleware extends Hookable
 
         foreach ($ref->getParameters() as $param) {
             // Let classes get auto-wired.
-            if ($param->getClass() === null) {
+            if ($param->getType() === null) {
                 if (\count($args) >= 1) {
                     $params[$param->getName()] = \array_shift($args);
                 }
