@@ -90,7 +90,7 @@ class FileBag extends Bag
             return $file;
         }
 
-        $normalised = $this->formatFilesArray($file);
+        $normalised = \is_array($file) ? $this->formatFilesArray($file) : null;
 
         if (\is_array($normalised)) {
             $keys = \array_keys($normalised);
@@ -129,7 +129,7 @@ class FileBag extends Bag
      * @param $data
      * @return array
      */
-    protected function formatFilesArray($data): array
+    protected function formatFilesArray($data): mixed
     {
         if (!\is_array($data)) {
             return $data;
